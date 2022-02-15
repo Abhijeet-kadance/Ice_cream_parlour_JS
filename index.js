@@ -1,4 +1,4 @@
-let is_shop_open = false;
+// Async and Await
 
 const stocks = {
     Fruits : ["strawberry", "grapes", "banana", "apple"],
@@ -7,69 +7,39 @@ const stocks = {
     toppings : ["chocolate", "peanuts"],
  };
 
+// async function kitchen(){
 
-// let order = (time,work) => {
-
-//     return new Promise((resolve,reject)=>{
-//         if(is_shop_open){
-//             resolve()
-//         }else{
-//             reject(console.log("Order is rejected"))
-//         }
-//     })
+//     let abc = "hey";
+//     try{
+//         await console.log(abc);
+//     }
+//     catch(error){
+//         console.log("Not woking.....",error)
+//     }
+//     finally{
+//         console.log("GoodBye...")
+//     }
 // }
 
-const order = (time,work) => {
-    // console.log("Test....")
+function topping_choice(){
     return new Promise((resolve,reject)=>{
-        if(is_shop_open){
-            setTimeout(()=>{
-                resolve(work())
-            },time)
-        }else{
-            reject(console.log("Shop Is Closed ....."))
-        }
+        setTimeout(()=>{
+            resolve(console.log(`You have selected ${stocks.toppings[0]} as your topping..`))
+        },2000)
     })
 }
 
-order(2000,
-    ()=>console.log(`${stocks.Fruits[0]} was selected`)
-)
+async function kitchen(){
+    console.log('A');
+    console.log('B');
+    console.log('C');
 
-.then(()=>{
-    return order(2000,()=>console.log("Production has Started"))
-})
+    await topping_choice();
 
-.then(()=>{
-    return order(3000,()=>console.log("Fruits have been chopped....."))
-})
-
-
-.then(()=>{
-    return order(1000,()=>  console.log(`Added ${stocks.liquid[0]} and ${stocks.liquid[1]} to the Machine.....`))
-})
-
-.then(()=>{
-    return order(1000,()=>console.log("Started the machine......."))
-})
-
-.then(()=>{
-    return order(2000,()=>console.log(`Seleceted ${stocks.holder[1]} as a container.....`))
-})
-
-.then(()=>{
-    return order(2000,()=> console.log(`Selected ${stocks.toppings[1]} as toppings.....`))
-})
-
-.then(()=>{
-    return order(1000,()=>{console.log("Your Ice-Cream is ready.. Here You Go.............")})
-})
-
-
-.catch(()=>{
-    console.log("Customer Left the Shop....")
-})
-
-.finally(()=>{
-    console.log("End of Day. See you Tomorrow.....")
-})
+    console.log('D');
+    console.log('E');
+}
+kitchen()
+console.log("doing the dishes")
+console.log("cleaning the tables")
+console.log("taking orders")
