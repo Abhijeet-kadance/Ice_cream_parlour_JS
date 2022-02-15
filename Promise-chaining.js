@@ -1,4 +1,4 @@
-let is_shop_open = false;
+let is_shop_open = true;
 
 const stocks = {
     Fruits : ["strawberry", "grapes", "banana", "apple"],
@@ -63,13 +63,4 @@ order(2000,
 
 .then(()=>{
     return order(1000,()=>{console.log("Your Ice-Cream is ready.. Here You Go.............")})
-})
-
-
-.catch(()=>{
-    console.log("Customer Left the Shop....")
-})
-
-.finally(()=>{
-    console.log("End of Day. See you Tomorrow.....")
 })
