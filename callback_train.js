@@ -22,30 +22,29 @@
 
 /* Chhosing a Holder and getting it from the Store Room */
 
-let holder_selection = (call_getting_liquid_to_machine) => {
+let holder_selection = (call_getting_liquid_to_machine , call_add_Flavour_to_ice_cream , call_add_toppings,call_serve_ice_cream) => {
     console.log("Please choose a Ice-Cream holder to Continue");
     console.log("Choose Stick holder")
     call_getting_liquid_to_machine();
+    call_add_Flavour_to_ice_cream();
+    call_add_toppings();
+    call_serve_ice_cream();
 }
 
-let getting_liquid_to_machine = (call_add_Flavour_to_ice_cream) => {
+let getting_liquid_to_machine = () => {
     console.log("Adding Water and Ice to Machine ...");
-    add_Flavour_to_ice_cream(add_toppings);
-   
-}
-let add_Flavour_to_ice_cream = (call_add_toppings) => {
-   console.log("Added mango Flavour to Machine ......");
-   call_add_toppings(); 
 }
 
-let add_toppings = (call_serve_ice_cream) =>{
-    console.log("Added Sprinkler to the Ice-ream .....")
-    serve_ice_cream();
-   
+let add_Flavour_to_ice_cream = () => {
+   console.log("Added mango Flavour to Machine ......");
+}
+
+let add_toppings = () =>{
+    console.log("Added Sprinkler to the Ice-ream .....")   
 }
 
 let serve_ice_cream = () => {
     console.log("Here is the Ice-Cream you asked for .....")
 }
 
-holder_selection(getting_liquid_to_machine);
+holder_selection(getting_liquid_to_machine,add_Flavour_to_ice_cream,add_toppings,serve_ice_cream);
